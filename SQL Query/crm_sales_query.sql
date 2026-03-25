@@ -48,9 +48,9 @@ count(*) as total_deals,
     sum(CASE WHEN deal_stage = 'Won' THEN 1 else 0 END) as wins,
     round(sum(CASE WHEN deal_stage = 'Won' THEN 1 else 0 END) *100.0 /count(*),
     2 )
-    as win_rate
-    From sales_pipeline
-    group by product
-    order by win_rate DESC;
+as win_rate
+From sales_pipeline
+group by product
+order by win_rate DESC;
     
     
